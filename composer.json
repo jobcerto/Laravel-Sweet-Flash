@@ -1,0 +1,17 @@
+{
+    "name": "draperstudio/laravel-sweet-flash",
+    "description": "Flash messages through SweetAlert for Laravel 5.",
+    "require": {
+        "php": ">=5.5.9",
+        "draperstudio/laravel-service-provider": "~1.0",
+        "illuminate/session": "~5.0|~5.1|~5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "DraperStudio\\SweetFlash\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    }
+}
