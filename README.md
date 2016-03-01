@@ -1,27 +1,27 @@
 # Laravel Sweet-Flash
 
-Based on [SweetAlert](https://github.com/uxweb/sweet-alert) by [uxweb](https://github.com/uxweb).
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Build Status][ico-travis]][link-travis]
+[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
+[![Quality Score][ico-code-quality]][link-code-quality]
+[![Total Downloads][ico-downloads]][link-downloads]
 
-## Requirements
+## Install
+
+### Requirements
 
 [SweetAlert](http://t4t5.github.io/sweetalert/) by [t4t5](https://github.com/t4t5)
 
-## New
+Via Composer
 
-- Completely configurable
-    - **Build whatever SweetAlert configuration you need with a fluent interface**
-
-## Installation
-
-First, pull in the package through Composer.
-
-```js
-composer require draperstudio/laravel-sweet-flash:1.0.*@dev
+``` bash
+$ composer require draperstudio/laravel-sweet-flash
 ```
 
 And then include the service provider within `app/config/app.php`.
 
-```php
+``` php
 'providers' => [
     DraperStudio\SweetFlash\ServiceProvider::class
 ];
@@ -29,35 +29,6 @@ And then include the service provider within `app/config/app.php`.
 
 ## Usage
 
-Within your controllers, before you perform a redirect...
-
-```php
-public function store()
-{
-    sweet('Welcome Aboard!');
-
-    return redirect('dashboard');
-}
-```
-
-You may also do:
-
-- `sweet()->success('Message')`
-- `sweet()->info('Message')`
-- `sweet()->warning('Message')`
-- `sweet()->error('Message')`
-
-Again, this will set one key in the session:
-
-- `sweet_flash.flash` - The SweetAlert JSON configuration you're flashing
-
-Because flash messages and overlays are so common, if you want, you may use (or modify) the views that are included with this package. Simply append to your layout view:
-
-```html
-@include('sweet::flash')
-```
-
-## Example
 
 ```html
 <!doctype html>
@@ -82,14 +53,14 @@ Because flash messages and overlays are so common, if you want, you may use (or 
 ```
 
 #### Message (Defaults to Info)
-```php
+``` php
 sweet('Welcome aboard!');
 
 return redirect()->route('dashboard');
 ```
 
 #### Success
-```php
+``` php
 sweet()->success('You successfully read this important alert message.');
 
 return redirect()->route('dashboard');
@@ -97,14 +68,14 @@ return redirect()->route('dashboard');
 
 #### Info
 
-```php
+``` php
 sweet()->info('This alert needs your attention, but it\'s not super important.');
 
 return redirect()->route('dashboard');
 ```
 
 #### Warning
-```php
+``` php
 sweet()->warning('Better check yourself, you\'re not looking too good.');
 
 return redirect()->route('dashboard');
@@ -112,14 +83,14 @@ return redirect()->route('dashboard');
 
 #### Error
 
-```php
+``` php
 sweet()->error('Change a few things up and try submitting again.');
 
 return redirect()->route('dashboard');
 ```
 
 #### Build your own Alert
-```php
+``` php
 sweet()->config('title', 'Are you sure?')
        ->config('text', 'You will not be able to recover this imaginary file!')
        ->config('type', 'warning')
@@ -142,3 +113,45 @@ sweet()->config('title', 'Are you sure?')
 
 return redirect()->route('dashboard');
 ```
+
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Testing
+
+``` bash
+$ composer test
+```
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+
+## Security
+
+If you discover any security related issues, please email hello@draperstudio.tech instead of using the issue tracker.
+
+## Credits
+
+- [DraperStudio][link-author]
+- [All Contributors][link-contributors]
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+[ico-version]: https://img.shields.io/packagist/v/DraperStudio/laravel-sweet-flash.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/DraperStudio/Laravel-Sweet-Flash/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/DraperStudio/laravel-sweet-flash.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/DraperStudio/laravel-sweet-flash.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/DraperStudio/laravel-sweet-flash.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/DraperStudio/laravel-sweet-flash
+[link-travis]: https://travis-ci.org/DraperStudio/Laravel-Sweet-Flash
+[link-scrutinizer]: https://scrutinizer-ci.com/g/DraperStudio/laravel-sweet-flash/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/DraperStudio/laravel-sweet-flash
+[link-downloads]: https://packagist.org/packages/DraperStudio/laravel-sweet-flash
+[link-author]: https://github.com/DraperStudio
+[link-contributors]: ../../contributors
