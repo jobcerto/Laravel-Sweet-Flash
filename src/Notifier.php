@@ -15,6 +15,8 @@ use Illuminate\Session\Store;
 
 /**
  * Class Notifier.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
  */
 class Notifier
 {

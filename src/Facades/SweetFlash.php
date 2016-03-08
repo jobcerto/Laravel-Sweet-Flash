@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * Class SweetFlash.
+ *
+ * @author DraperStudio <hello@draperstudio.tech>
  */
 class SweetFlash extends Facade
 {
